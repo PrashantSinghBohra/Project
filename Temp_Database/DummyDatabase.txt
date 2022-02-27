@@ -1,0 +1,109 @@
+
+
+_________________________________________________________________________________________________________________________________ 
+Customer_Info_tbl
+
+mysql> Create table Customer_info_tbl(Customer_Id int Primary key, Customer_FirstName Varchar(255), Customer_LastName Varchar(255), Customer_MobileNo varchar(255), Customer_EmailId Varchar(255), Customer_UserName Varchar(255), Customer_Password Varchar(255), Customer_Address text, Customer_State Varchar(255), Customer_City varchar(255), Customer_Pincode int);
+
+mysql> alter table Customer_Info_Tbl Auto_increment=11;
+
+mysql> Insert Into Customer_Info_Tbl values(default, "Pooja", "Kale", "9988776655", "Poojakale0911@gmail.com", "Pooja-Kale", "Pooja@01", "Near Post Office", "Maharashtra", "Pune",442277);
+
+mysql> Insert Into Customer_Info_Tbl values(default, "Rutuja", "Firke", "8877665511", "RutujaFirke1002@gmail.com", "Rututja-Firke", "Rutuja@02", "Near Station", "Maharashtra", "Mumbai", 402271);
+
+mysql> Insert Into Customer_Info_Tbl values(default, "Prashant", "Bohra", "9881776655", "PrashantBohra22@gm1il.com", "Prashant-Bohra", "Prashant@123", "Behind HDFC Bank", "Maharashtra", "Nashik", 402277);
+
+mysql> Insert Into Customer_Info_Tbl values(default, "Nikhil", "Sahane", "8781776655", "NikhilSahane33@gmail.com", "Nikhil-Sahane", "Nikhil@456", "ABC Chock", "Maharashtra", "Pune", 402217);
+
+mysql> Insert Into Customer_Info_Tbl values(default, "Lucky", "Kumar", "9881116611", "LuckyKumar@gmail.com", "Lucky_Kumar", "Lucky@123", "Near Market", "Maharashtra", "Nashik", 403271);
+
+mysql> Insert Into Customer_Info_Tbl values(default, "Anurag", "Deore", "9881226611", "AnuragDeore@gmail.com", "Anurag-Deore", "Anurag@123", "Near church", "Maharashtra", "Pune", 203271);
+
+
+
+_________________________________________________________________________________________________________________________________ 
+Vendor_info_tbl
+
+
+mysql> Create table Vendor_info_tbl(Vendor_Id int Primary key, Vendor_FirstName Varchar(255), Vendor_LastName Varchar(255), Vendor_MobileNo varchar(255), Vendor_EmailId Varchar(255), Vendor_UserName Varchar(255), Vendor_Password Varchar(255), Vendor_Address text, Vendor_State Varchar(255), Vendor_City varchar(255), Vendor_Pincode int);
+
+mysql> alter table Vendor_info_tbl modify Vendor_id int not null auto_increment;
+
+mysql> alter table Vendor_Info_Tbl Auto_increment=101;
+
+mysql> Insert Into Vendor_Info_Tbl values(default, "Aditya", "Birla", "8181116611", "AdityaBirla@gmail.com", "AdityaBirla", "Aditya@123", "Market Yard", "Maharashtra", "Pune", 203171);
+
+mysql> Insert Into Vendor_Info_Tbl values(default, "Advik", "Jadhav", "8811166711", "AdvikJadhav@gmail.com", "Advik-Jadhav", "Advik@123", "Behind Post Office", "Maharashtra", "Pune", 403171);
+
+mysql> Insert Into Vendor_Info_Tbl values(default, "Yash", "Kumar", "8811008811", "YashKumar101@gmail.com", "Yash-Kumar", "Yash@123", "Shivajichoak", "Maharashtra", "Nashik", 203133);
+
+mysql> Insert Into Vendor_Info_Tbl values(default, "Niraj", "Desai", "9811008800", "NirajDesai01@gmail.com", "Niraj-Desai", "Niraj@123", "Near SP College", "Maharashtra", "Pune", 403113);
+
+mysql> Insert Into Vendor_Info_Tbl values(default, "Sanjay", "Raut", "8899116611", "SanjayRaut99@gmail.com", "Sanjay-Raut", "Sanjay@123", "near kalyan", "Maharashtra", "Mumbai", 207671);
+
+
+____________________________________________________________________________________________________________________________________________________
+Service_Info_Tbl 
+
+
+mysql> Create table Service_Info_Tbl(Service_Id int Primary key auto_increment, Service_Name varchar(255), Service_Cost int, Service_Discount int, Service_Time_Duration int, Service_vendor_id int, foreign key(Service_vendor_id) references Vendor_info_tbl(Vendor_id));
+
+mysql> alter table service_Info_Tbl Auto_increment=1001;
+
+mysql> Insert into service_info_tbl values(default, "AC Repairing", 500, 2, 1, 101);
+
+mysql> Insert into service_info_tbl values(default, "Fan Repairing", 600, 3, 1, 101);
+
+mysql> Insert into service_info_tbl values(default, "AC Repairing", 400, 2, 1, 102);
+
+mysql> Insert into service_info_tbl values(default, "Fan Repairing", 700, 2, 1, 102);
+
+mysql> Insert into service_info_tbl values(default, "Refrigerator Repairing", 900, 2, 1, 103);
+
+mysql> Insert into service_info_tbl values(default, "Refrigerator Repairing", 600, 2, 2, 101);
+
+mysql> Insert into service_info_tbl values(default, "Washing Machine", 800, 3, 1, 104);
+
+______________________________________________________________________________________________________________________________________________
+Booking_Service_info_tbl 
+
+mysql> Create table Booking_Service_info_tbl(Booking_Service_Id int Primary key auto_increment, Total_Cost int, Service_Status varchar(255), CustomerId int, foreign key(CustomerId) references Customer_info_tbl(Customer_ID));
+
+mysql> insert into booking_service_info_tbl values(default,1100, "Completed",11);
+
+mysql> insert into booking_service_info_tbl values(default,500, "InProcess",12);
+
+
+
+____________________________________________________________________________________________________________________________________________________
+Booking_info_tbl 
+
+mysql> create table Booking_info_tbl(Booking_id int primary key auto_increment,Booking_Service_info_id int, foreign key(Booking_service_info_id) references booking_service_info_tbl(Booking_Service_Id),
+     Booking_Customer_id int, foreign key(Booking_customer_id) references customer_info_tbl(customer_Id),
+     Booking_service_id int, foreign key(Booking_service_id) references service_info_tbl(Service_Id),
+     Booking_service_cost int,
+     Booking_Status text, Booking_Date datetime, Booking_Shedule_Date_Time datetime, Feedback_Rating int, FeedBack_Comment text, Feedback_Date date);
+
+mysql> Insert into Booking_info_tbl values(default, 1, 11, 1001, 500, "Completed", "2022-02-20 01:50:11", "2022-03-25 02:00:00", 5, " Satisfy with the service", "2022-02-26");
+
+mysql> Insert into Booking_info_tbl values(default, 1, 11, 1002, 600, "Completed", "2022-02-20 01:55:01","2022-03-25 02:00:00", 4, "Good Service","2022-02-26");
+
+mysql> Insert into Booking_info_tbl values(default, 2, 12, 1001, 500, "Inprogess", "2022-02-25 02:55:01", "2022-03-02 03:00:10", null, null, null);
+
+
+
+____________________________________________________________________________________________________________________________________________________ 
+Feedback_Info_Tbl  
+
+mysql> Create table Feedback_Info_Tbl(Feedback_Id int Primary key auto_increment, Feedback_vendor_id int, Feedback_customer_id int, foreign key(Feedback_vendor_id) references Vendor_info_tbl(Vendor_id),  foreign key(Feedback_customer_id) references Customer_info_tbl(Customer_id));
+
+mysql> alter table Feedback_Info_Tbl Auto_increment=10001;
+
+mysql> insert Feedback_Info_Tbl values(default, 101, 11);
+
+mysql> insert Feedback_Info_Tbl values(default, 101, 12);
+
+mysql> insert Feedback_Info_Tbl values(default, 102, 13);
+
+mysql> insert Feedback_Info_Tbl values(default, 103, 14);
+
