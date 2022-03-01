@@ -145,6 +145,30 @@ INSERT INTO `feedback_info_tbl` VALUES (10001,101,11),(10002,101,12),(10003,102,
 UNLOCK TABLES;
 
 --
+-- Table structure for table `image_tbl`
+--
+
+DROP TABLE IF EXISTS `image_tbl`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `image_tbl` (
+  `id` int NOT NULL,
+  `image` longblob,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `image_tbl`
+--
+
+LOCK TABLES `image_tbl` WRITE;
+/*!40000 ALTER TABLE `image_tbl` DISABLE KEYS */;
+INSERT INTO `image_tbl` VALUES (1,_binary 'ÿ\Øÿ\à\0JFIF\0\0\0\0\0\0ÿ\Û\0C\0		\n !%0)!#-$*9*-13666 (;?:4>0563ÿ\Û\0C			3\"\"33333333333333333333333333333333333333333333333333ÿÀ\0\0Š\0 \"\0ÿ\Ä\0\0\0\0\0\0\0\0\0\0\0\0\0\0ÿ\Ä\0:\0\0\0\0\0\0!1AQ\"aq‘¡#2±ÁB\Ñ\ð$34C‚\ñr’\áÿ\Ä\0\0\0\0\0\0\0\0\0\0\0\0\0\0ÿ\Ä\0\0\0\0\0\0\0\0\0\0\0!12\"ÿ\Ú\0\0\0?\0\íCM\ôOá²—\Ý4T­Sd\í’\'v\ÉE\îÊŸ\â\n\\0Jù\älL :Þ§e¿ˆVE‡PMW5\òF\Û\ØnO ¼Ÿ\ÄˆNg˜¹\Ó\Ëgxºr\öQ]H¿\Ä8Þ¦B>”6¼n½½IU•X¥uD\Îú—·\\\ò¿\Ã\ím3\Ø\×\é\êKÁšjƒj©OÜž\ñ­Üµ\÷µþ\ê66\ç\Ç\ë)c	\ä\ö¹²Ÿúû-¬?´\\BŠ@j\Ëk\"\Z88\0\ëy©>«—šŠ9^d\Ìs\ò‡¨\èdˆœŒk:[ŸÀ]t‹+\è;§\Å0\Ø+©\Ü\ã­»sn<Š\Øq^5\ÂKY\Õ6	\Þù¨\\lb&\á·\æ:s^»\rDuT\ìš\'fc†…Mr\ÊuJPºRz¨º\"Š\0¨”E”²‘j\á\áX\î³eX¬9(&\åjs@®\Z$\0„\îI—\ÏmQ.gj\Ó\Ñ\Ò5Àd$ß\×%l—†\"\\\çß¼”\\0r\0s\ë\îºLyŽ\ÄøŠH\r›>V\æ=7?ªÚ¤kbs#e¬9]QË•\Æ/\â\Ãt(8N˜–º¡\ï\Ü\óh>»¸¨ˆ[q\Ê\ÊÆ”me{M˜v‹,ž\õº\ã$ø\ó);1k^m!\ßK-*\Î\0Žš½\Å\ÃmW¯N|Ás¸“¼¸S\ï‘8\ñ¯m+ß˜Ü‡s<\õ]\Ï	Uf¡’•\Î\ñ\Ä\ï\Ë\Ë\ÙVc”Mpk\ò’\àVRc²C+³1\ñ\Ö\Ë_~Ñƒ—Z\îI@ 9¢U\ÑJ\"\n\0\"4*Pe:¡eÔ‹·uŽ\ÖM›D·@\óJ.\nbRJuP\rwP5My(¿>¸.\"’Jz\É\ê\Ùv	3ƒ\äl½\Ö\ÅÍŽž:ŠƒÝ´\Ø\ë\È+^0£\áMu\Í “A\È’°U`\Ä)\âfŽ ?ir6ºÇ–[·\ã…\Ç+c=/\áq8šø\ãþY|%tX_\áu\î,§«ŠG^\Ökµ^6\rŽ\Ë\"v#1ç‰‘·(\ZZÀ‹\ß•¿ARR\É\ßF\Æ5\Ìp\È\ì–yë°²\ç9Žºu\Ê×¢O4q\Ä\ç=\ö¾§`7ˆcX`ü\'T\Æv…\Ö>\'kê ¥£¶f\Ý\÷y\0m\îl¸j®\Z–\nÈ¦¦§¢ž7Û½lÑ—†\×\'C®Ÿ¢q\ã/\×YÛŒé±V\ÓU\ÅzY\Ã]ce0Y[‹F\è\ØmE\Ä\õ¸²«šZ\Ã8¥4\ìkŒr1¤–¸l:z+\Î§12Yu¶R\Û{«ø\õ:Œ¼»\Ênº€	\Zl˜\rfÔ¢´³2y \n<\Ô uM\Édt²\r\âR©š\È]P(Ó¢„\Ø›¤ü%.¸J]¢ƒƒ\ê0i„¸–n\Û„øL™\éc. —4y\Ý#©å‰¥­l µZ˜3‹i\Ø\Ûm¥¹¬\\œv=.Ik¢ú8\ä!\ä·^yVdº¥±F\ÐMù\ÓU<4D4U\Õr\Ö\Ä\Ô}Ûƒ<o\ÛÏ’ªcjý\É\Ù\ñ˜¿\ÄÒ¹\â\ìË“\Òÿ\0\ô³2\Ç^&žw\ZOˆ\âX†\'Sj\ê&‘Û‘\Ò\Ê\ö:\Ü\ð´\ì–Y,ª\\N8©p\é‹\Z—\0*\ì\r¥”¦<¶-n¾§UµŽ½Ò´\Å}\æ·Nz¬´\í\É\å\Ê\\s\Óû²¿ƒ½²yMj2‘rQh² Û­Œ,\ÍM\Í#Jk dn€¢T„j	Š]l»\ê–üŠ6HN¨#Š-·4·\ÕOu\0¸‚l«°\ç\÷5\ÓB\ã\âc\É\öä·¬}|—1UZ\ß\âO¯£™³G›+\Ë5\Ú[W7x¯\ñÿ\0N¦°\Ôd\"ÁŸR]{}–\ZWb\'¼¥†X\Ç\æ\É1\à‹)‡\Ö2¦‘Ù‚\ÛtE\Î-f–\Z\Ýdø\Ý*ººI\ÜúZÞ¦FU‹\ï$‘†2\Òt½\ô[²S·8ŽFƒ¥ú]Vb8 ¸\Ì\Â,yhŸK\ÒVe“‰¬\ÐF\ó\ëk\Ôü,\ãoº¦Á«[^Ê™‹Á\É\âh>&‹xAû«P\íw[x\ñ\Ö/?—/l}Q	Q¾Š\ÅG	ÁXÁ)‚Át(\ßTgU\ÑºX\Ý`u)Žš\òX*ja£…\Ó\Ô\Î\Èah\Õ\ïxhùM—\r\Ö\èf\×\Ùq8§iXE)s(Y-l»fgŸûO\Â\ãq.\Ðq\Ú\Ü\âã£ˆ‹e§gŠ\ßùT\ÌQ·]\Ú7¢“£”\Z\é›i^Ó¬L¶¿\ò;ykäŸƒ!lœ-L\ÖØœš\é\Îú¯\"{ ‘\î%\Ïp$’nI^¥\Ù\åP~	\Ýø^@þý\Õ^F6`»Æ¿\Õ\Ú\ö7Í‚\Ï$‘‚\ènZ7Š\Ò>(£i$8´;|À\Ýl>‘µt—h»€UƒŠGø…B9[l¦«\âº6¸¸?(°\0\ÊU\É6/W\ß\Èb¿…¤þª\ê|)\Ñ1·rÖ«§pk4\ne›E•ÀC\Ä`œe5[|\',SE{gmµ\÷\Óu\é\ØOax\Äa\ÔÕŒâ”†¼Cûh¼oˆÃŠ\Î\rÁ6q\÷Z„f\Z~\ëÑ“x¼ÜºÊ¾†\ÛC\í¢`GP¼\n“Å¨,\Ú\\Jªš\Ù	oÁ\Ó\ì¯){B\â*kg¨‚¤\rÄ°}\Ûd\õ=£Ø…·ºaº\óZ^\Ô\ækš+0˜\Ü?™\ÐHAøuÿ\0U}K\Ú7T\0%–zWR\Äm\ò.£Ö§q\Ø7E\0¹Z”8#z*¸j\0=Û®G¶\ëpn|”hm\É$p‚\éž\È\Û{]\î\r\år§i81Ó¾J\éÿ\0d\0ß“û]q]¦â­\âg\Ò\÷„\ÃHÀ\ÐÀ\âc©?q\ð¸\Â/c}ºþ.\æ.v\ïqÔ±)\î\Ú\ZX)[\ÉÎ¼Žû\é\ö\\^!‰V\â³\÷\Õ\ÕSO\'#+³[\Ðm\öZª)\Ò6š\õºWd\ÂÄ¢FŠPF	t]·f\ÕVªš‘Ç£Àû\ÙqcEe\ÃˆÂ±úy\Ü\ëF\×\Ùþ‡E_&;\Åg\ÖO 0\ÒY3¡-\ôb¢Ž9œCšt\Þ\Å%$%ïŠ¢t\Z\Þãª·c[\õ>!\áp\ß\Íyš\ÖÞ¬\îmQM…E\ðÝµ\ÕP\ÖP¶WKœ_¡]Ô®c€°²¦ª¥ik›–ú(C\çþ1\ñ\rDm;F\Í>\êŒU·\Z<IÆ¸‘6L\ö\0*€4^¶˜\ò³¿\ÕB€\"6Pnºq´·’¿2ˆm t”²‰ ‘\Ð\ÊÝŸ‹H\÷\Ô;:\â\nœF:¬6¶w\Ìø@–\'\Èn\ì¤Ø‚y\Ø\Û\åyq\"Ë¡\àj\ÑE\Å\ô]\ãÀŽ¢\ô\îÿ\0\Ó\î‹	U\Ø\Åa\Ä1J\Ê\Ãk\ÔL\ç\ÐrZm\Ùvæ•º)€\Ù&Q¾ˆ\ïª&\Ä%\Z +^RZ\÷›>\Ëc\É+›ø‡KŽa¯\ö]Æ¦©±\àUŽ¼Ñ°ý,§w4\ÈyiÈ¯N‘\Ísn\ãkt_=vyC%W\ZP:ž\àBL\Î#Ÿ\È_@ˆŸ–û\ò^w‘Œ™j=/Ü°\Ý7„·šÓ©•\í_~‹u\Ð9\Ä_BW-\Æ8˜Á\ð\nªœßŠ\æ\÷pù¼\è?ª§m².\ÎÉxV,\ñQŒW\Ê\\\ï©y¿_þ‹Q(‹4¹‰<\É=OT\ËÖ“­<{\Ý\Ø:\Þ\È7]Q\"\ê\r P;\"•\æ\Â\è›§Žg\Ó\Ï\ñŸÄ‰\á\í\õ\ã\ôXÛ©Dú \Øx\Õ*b‘\È6@¨6E\õAh Šg\r^\Öq±Qc“vz \ô\Î8·\n\áêšŠ|BŸ»}Kÿ\0Õ˜4\rƒ›\Ó^K\Üéª©\ë\è\ÙQM+eŠ@\Ù\Z\à\à\á\ê\É\í$<küÁ{c\Ò\È\êjH\ãv°ŸOY9\ðŸ¦\ÎK­=M\î±!\Û[U\à} q/\ñ\ìu\ñÀû\ÐÑ¸\Ç9Àø\ó§ ^ÙŒ8³\r«-%¤D\ò\Ò\Þ¾dÿ\0iž‡\õ+Ÿ\ZK\Ýu\ä\åd\Ó\ïu¬3­\Óûý’œ\Ò?Y\ÞO—îŸ’\ÚÂˆ‘J\í½\Ñ\Íc”œ¥d\æ±K±@|7N4Œÿ\0-d(?ÿ\Ù');
+/*!40000 ALTER TABLE `image_tbl` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `service_info_tbl`
 --
 
@@ -158,6 +182,7 @@ CREATE TABLE `service_info_tbl` (
   `Service_Discount` int DEFAULT NULL,
   `Service_Time_Duration` int DEFAULT NULL,
   `Service_vendor_id` int DEFAULT NULL,
+  `Service_Image` longblob,
   PRIMARY KEY (`Service_Id`),
   KEY `Service_vendor_id` (`Service_vendor_id`),
   CONSTRAINT `service_info_tbl_ibfk_1` FOREIGN KEY (`Service_vendor_id`) REFERENCES `vendor_info_tbl` (`Vendor_id`)
@@ -170,7 +195,7 @@ CREATE TABLE `service_info_tbl` (
 
 LOCK TABLES `service_info_tbl` WRITE;
 /*!40000 ALTER TABLE `service_info_tbl` DISABLE KEYS */;
-INSERT INTO `service_info_tbl` VALUES (1001,'AC Repairing',500,2,1,101),(1002,'Fan Repairing',600,3,1,101),(1003,'AC Repairing',400,2,1,102),(1004,'Fan Repairing',700,2,1,102),(1005,'Refrigerator Repairing',900,2,1,103),(1006,'Refrigerator Repairing',600,2,2,101),(1007,'Washing Machine',800,3,1,104);
+INSERT INTO `service_info_tbl` VALUES (1001,'AC Repairing',500,2,1,101,NULL),(1002,'Fan Repairing',600,3,1,101,NULL),(1003,'AC Repairing',400,2,1,102,NULL),(1004,'Fan Repairing',700,2,1,102,NULL),(1005,'Refrigerator Repairing',900,2,1,103,NULL),(1006,'Refrigerator Repairing',600,2,2,101,NULL),(1007,'Washing Machine',800,3,1,104,NULL);
 /*!40000 ALTER TABLE `service_info_tbl` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -193,6 +218,7 @@ CREATE TABLE `vendor_info_tbl` (
   `Vendor_State` varchar(255) DEFAULT NULL,
   `Vendor_City` varchar(255) DEFAULT NULL,
   `Vendor_Pincode` int DEFAULT NULL,
+  `Vendor_Image` longblob,
   PRIMARY KEY (`Vendor_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=108 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -203,7 +229,7 @@ CREATE TABLE `vendor_info_tbl` (
 
 LOCK TABLES `vendor_info_tbl` WRITE;
 /*!40000 ALTER TABLE `vendor_info_tbl` DISABLE KEYS */;
-INSERT INTO `vendor_info_tbl` VALUES (101,'Aditya','Birla','8181116611','AdityaBirla@gmail.com','AdityaBirla','Aditya@123','Market Yard','Maharashtra','Pune',203171),(102,'Advik','Jadhav','8811166711','AdvikJadhav@gmail.com','Advik-Jadhav','Advik@123','Behind Post Office','Maharashtra','Pune',403171),(103,'Yash','Kumar','8811008811','YashKumar101@gmail.com','Yash-Kumar','Yash@123','Shivajichoak','Maharashtra','Nashik',203133),(104,'Niraj','Desai','9811008800','NirajDesai01@gmail.com','Niraj-Desai','Niraj@123','Near SP College','Maharashtra','Pune',403113),(105,'Sanjay','Raut','8899116611','SanjayRaut99@gmail.com','Sanjay-Raut','Sanjay@123','near kalyan','Maharashtra','Mumbai',207671);
+INSERT INTO `vendor_info_tbl` VALUES (101,'Aditya','Birla','8181116611','AdityaBirla@gmail.com','AdityaBirla','Aditya@123','Market Yard','Maharashtra','Pune',203171,_binary 'ÿ\Øÿ\à\0JFIF\0\0\0\0\0\0ÿ\Û\0C\0		\n !%0)!#-$*9*-13666 (;?:4>0563ÿ\Û\0C			3\"\"33333333333333333333333333333333333333333333333333ÿÀ\0\0Š\0 \"\0ÿ\Ä\0\0\0\0\0\0\0\0\0\0\0\0\0\0ÿ\Ä\0:\0\0\0\0\0\0!1AQ\"aq‘¡#2±ÁB\Ñ\ð$34C‚\ñr’\áÿ\Ä\0\0\0\0\0\0\0\0\0\0\0\0\0\0ÿ\Ä\0\0\0\0\0\0\0\0\0\0\0!12\"ÿ\Ú\0\0\0?\0\íCM\ôOá²—\Ý4T­Sd\í’\'v\ÉE\îÊŸ\â\n\\0Jù\älL :Þ§e¿ˆVE‡PMW5\òF\Û\ØnO ¼Ÿ\ÄˆNg˜¹\Ó\Ëgxºr\öQ]H¿\Ä8Þ¦B>”6¼n½½IU•X¥uD\Îú—·\\\ò¿\Ã\ím3\Ø\×\é\êKÁšjƒj©OÜž\ñ­Üµ\÷µþ\ê66\ç\Ç\ë)c	\ä\ö¹²Ÿúû-¬?´\\BŠ@j\Ëk\"\Z88\0\ëy©>«—šŠ9^d\Ìs\ò‡¨\èdˆœŒk:[ŸÀ]t‹+\è;§\Å0\Ø+©\Ü\ã­»sn<Š\Øq^5\ÂKY\Õ6	\Þù¨\\lb&\á·\æ:s^»\rDuT\ìš\'fc†…Mr\ÊuJPºRz¨º\"Š\0¨”E”²‘j\á\áX\î³eX¬9(&\åjs@®\Z$\0„\îI—\ÏmQ.gj\Ó\Ñ\Ò5Àd$ß\×%l—†\"\\\çß¼”\\0r\0s\ë\îºLyŽ\ÄøŠH\r›>V\æ=7?ªÚ¤kbs#e¬9]QË•\Æ/\â\Ãt(8N˜–º¡\ï\Ü\óh>»¸¨ˆ[q\Ê\ÊÆ”me{M˜v‹,ž\õº\ã$ø\ó);1k^m!\ßK-*\Î\0Žš½\Å\ÃmW¯N|Ás¸“¼¸S\ï‘8\ñ¯m+ß˜Ü‡s<\õ]\Ï	Uf¡’•\Î\ñ\Ä\ï\Ë\Ë\ÙVc”Mpk\ò’\àVRc²C+³1\ñ\Ö\Ë_~Ñƒ—Z\îI@ 9¢U\ÑJ\"\n\0\"4*Pe:¡eÔ‹·uŽ\ÖM›D·@\óJ.\nbRJuP\rwP5My(¿>¸.\"’Jz\É\ê\Ùv	3ƒ\äl½\Ö\ÅÍŽž:ŠƒÝ´\Ø\ë\È+^0£\áMu\Í “A\È’°U`\Ä)\âfŽ ?ir6ºÇ–[·\ã…\Ç+c=/\áq8šø\ãþY|%tX_\áu\î,§«ŠG^\Ökµ^6\rŽ\Ë\"v#1ç‰‘·(\ZZÀ‹\ß•¿ARR\É\ßF\Æ5\Ìp\È\ì–yë°²\ç9Žºu\Ê×¢O4q\Ä\ç=\ö¾§`7ˆcX`ü\'T\Æv…\Ö>\'kê ¥£¶f\Ý\÷y\0m\îl¸j®\Z–\nÈ¦¦§¢ž7Û½lÑ—†\×\'C®Ÿ¢q\ã/\×YÛŒé±V\ÓU\ÅzY\Ã]ce0Y[‹F\è\ØmE\Ä\õ¸²«šZ\Ã8¥4\ìkŒr1¤–¸l:z+\Î§12Yu¶R\Û{«ø\õ:Œ¼»\Ênº€	\Zl˜\rfÔ¢´³2y \n<\Ô uM\Édt²\r\âR©š\È]P(Ó¢„\Ø›¤ü%.¸J]¢ƒƒ\ê0i„¸–n\Û„øL™\éc. —4y\Ý#©å‰¥­l µZ˜3‹i\Ø\Ûm¥¹¬\\œv=.Ik¢ú8\ä!\ä·^yVdº¥±F\ÐMù\ÓU<4D4U\Õr\Ö\Ä\Ô}Ûƒ<o\ÛÏ’ªcjý\É\Ù\ñ˜¿\ÄÒ¹\â\ìË“\Òÿ\0\ô³2\Ç^&žw\ZOˆ\âX†\'Sj\ê&‘Û‘\Ò\Ê\ö:\Ü\ð´\ì–Y,ª\\N8©p\é‹\Z—\0*\ì\r¥”¦<¶-n¾§UµŽ½Ò´\Å}\æ·Nz¬´\í\É\å\Ê\\s\Óû²¿ƒ½²yMj2‘rQh² Û­Œ,\ÍM\Í#Jk dn€¢T„j	Š]l»\ê–üŠ6HN¨#Š-·4·\ÕOu\0¸‚l«°\ç\÷5\ÓB\ã\âc\É\öä·¬}|—1UZ\ß\âO¯£™³G›+\Ë5\Ú[W7x¯\ñÿ\0N¦°\Ôd\"ÁŸR]{}–\ZWb\'¼¥†X\Ç\æ\É1\à‹)‡\Ö2¦‘Ù‚\ÛtE\Î-f–\Z\Ýdø\Ý*ººI\ÜúZÞ¦FU‹\ï$‘†2\Òt½\ô[²S·8ŽFƒ¥ú]Vb8 ¸\Ì\Â,yhŸK\ÒVe“‰¬\ÐF\ó\ëk\Ôü,\ãoº¦Á«[^Ê™‹Á\É\âh>&‹xAû«P\íw[x\ñ\Ö/?—/l}Q	Q¾Š\ÅG	ÁXÁ)‚Át(\ßTgU\ÑºX\Ý`u)Žš\òX*ja£…\Ó\Ô\Î\Èah\Õ\ïxhùM—\r\Ö\èf\×\Ùq8§iXE)s(Y-l»fgŸûO\Â\ãq.\Ðq\Ú\Ü\âã£ˆ‹e§gŠ\ßùT\ÌQ·]\Ú7¢“£”\Z\é›i^Ó¬L¶¿\ò;ykäŸƒ!lœ-L\ÖØœš\é\Îú¯\"{ ‘\î%\Ïp$’nI^¥\Ù\åP~	\Ýø^@þý\Õ^F6`»Æ¿\Õ\Ú\ö7Í‚\Ï$‘‚\ènZ7Š\Ò>(£i$8´;|À\Ýl>‘µt—h»€UƒŠGø…B9[l¦«\âº6¸¸?(°\0\ÊU\É6/W\ß\Èb¿…¤þª\ê|)\Ñ1·rÖ«§pk4\ne›E•ÀC\Ä`œe5[|\',SE{gmµ\÷\Óu\é\ØOax\Äa\ÔÕŒâ”†¼Cûh¼oˆÃŠ\Î\rÁ6q\÷Z„f\Z~\ëÑ“x¼ÜºÊ¾†\ÛC\í¢`GP¼\n“Å¨,\Ú\\Jªš\Ù	oÁ\Ó\ì¯){B\â*kg¨‚¤\rÄ°}\Ûd\õ=£Ø…·ºaº\óZ^\Ô\ækš+0˜\Ü?™\ÐHAøuÿ\0U}K\Ú7T\0%–zWR\Äm\ò.£Ö§q\Ø7E\0¹Z”8#z*¸j\0=Û®G¶\ëpn|”hm\É$p‚\éž\È\Û{]\î\r\år§i81Ó¾J\éÿ\0d\0ß“û]q]¦â­\âg\Ò\÷„\ÃHÀ\ÐÀ\âc©?q\ð¸\Â/c}ºþ.\æ.v\ïqÔ±)\î\Ú\ZX)[\ÉÎ¼Žû\é\ö\\^!‰V\â³\÷\Õ\ÕSO\'#+³[\Ðm\öZª)\Ò6š\õºWd\ÂÄ¢FŠPF	t]·f\ÕVªš‘Ç£Àû\ÙqcEe\ÃˆÂ±úy\Ü\ëF\×\Ùþ‡E_&;\Åg\ÖO 0\ÒY3¡-\ôb¢Ž9œCšt\Þ\Å%$%ïŠ¢t\Z\Þãª·c[\õ>!\áp\ß\Íyš\ÖÞ¬\îmQM…E\ðÝµ\ÕP\ÖP¶WKœ_¡]Ô®c€°²¦ª¥ik›–ú(C\çþ1\ñ\rDm;F\Í>\êŒU·\Z<IÆ¸‘6L\ö\0*€4^¶˜\ò³¿\ÕB€\"6Pnºq´·’¿2ˆm t”²‰ ‘\Ð\ÊÝŸ‹H\÷\Ô;:\â\nœF:¬6¶w\Ìø@–\'\Èn\ì¤Ø‚y\Ø\Û\åyq\"Ë¡\àj\ÑE\Å\ô]\ãÀŽ¢\ô\îÿ\0\Ó\î‹	U\Ø\Åa\Ä1J\Ê\Ãk\ÔL\ç\ÐrZm\Ùvæ•º)€\Ù&Q¾ˆ\ïª&\Ä%\Z +^RZ\÷›>\Ëc\É+›ø‡KŽa¯\ö]Æ¦©±\àUŽ¼Ñ°ý,§w4\ÈyiÈ¯N‘\Ísn\ãkt_=vyC%W\ZP:ž\àBL\Î#Ÿ\È_@ˆŸ–û\ò^w‘Œ™j=/Ü°\Ý7„·šÓ©•\í_~‹u\Ð9\Ä_BW-\Æ8˜Á\ð\nªœßŠ\æ\÷pù¼\è?ª§m².\ÎÉxV,\ñQŒW\Ê\\\ï©y¿_þ‹Q(‹4¹‰<\É=OT\ËÖ“­<{\Ý\Ø:\Þ\È7]Q\"\ê\r P;\"•\æ\Â\è›§Žg\Ó\Ï\ñŸÄ‰\á\í\õ\ã\ôXÛ©Dú \Øx\Õ*b‘\È6@¨6E\õAh Šg\r^\Öq±Qc“vz \ô\Î8·\n\áêšŠ|BŸ»}Kÿ\0Õ˜4\rƒ›\Ó^K\Üéª©\ë\è\ÙQM+eŠ@\Ù\Z\à\à\á\ê\É\í$<küÁ{c\Ò\È\êjH\ãv°ŸOY9\ðŸ¦\ÎK­=M\î±!\Û[U\à} q/\ñ\ìu\ñÀû\ÐÑ¸\Ç9Àø\ó§ ^ÙŒ8³\r«-%¤D\ò\Ò\Þ¾dÿ\0iž‡\õ+Ÿ\ZK\Ýu\ä\åd\Ó\ïu¬3­\Óûý’œ\Ò?Y\ÞO—îŸ’\ÚÂˆ‘J\í½\Ñ\Íc”œ¥d\æ±K±@|7N4Œÿ\0-d(?ÿ\Ù'),(102,'Advik','Jadhav','8811166711','AdvikJadhav@gmail.com','Advik-Jadhav','Advik@123','Behind Post Office','Maharashtra','Pune',403171,NULL),(103,'Yash','Kumar','8811008811','YashKumar101@gmail.com','Yash-Kumar','Yash@123','Shivajichoak','Maharashtra','Nashik',203133,NULL),(104,'Niraj','Desai','9811008800','NirajDesai01@gmail.com','Niraj-Desai','Niraj@123','Near SP College','Maharashtra','Pune',403113,NULL),(105,'Sanjay','Raut','8899116611','SanjayRaut99@gmail.com','Sanjay-Raut','Sanjay@123','near kalyan','Maharashtra','Mumbai',207671,NULL);
 /*!40000 ALTER TABLE `vendor_info_tbl` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -216,4 +242,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-02-27 16:52:30
+-- Dump completed on 2022-03-01 21:28:16
