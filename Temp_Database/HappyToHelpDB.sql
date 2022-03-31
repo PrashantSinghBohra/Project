@@ -1,0 +1,245 @@
+-- MySQL dump 10.13  Distrib 8.0.27, for Win64 (x86_64)
+--
+-- Host: localhost    Database: dummy
+-- ------------------------------------------------------
+-- Server version	8.0.27
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `booking_info_tbl`
+--
+
+DROP TABLE IF EXISTS `booking_info_tbl`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `booking_info_tbl` (
+  `Booking_id` int NOT NULL AUTO_INCREMENT,
+  `Booking_Service_info_id` int DEFAULT NULL,
+  `Booking_Customer_id` int DEFAULT NULL,
+  `Booking_service_id` int DEFAULT NULL,
+  `Booking_service_cost` int DEFAULT NULL,
+  `Booking_Status` text,
+  `Booking_Date` datetime DEFAULT NULL,
+  `Booking_Shedule_Date_Time` datetime DEFAULT NULL,
+  `Feedback_Rating` int DEFAULT NULL,
+  `FeedBack_Comment` text,
+  `Feedback_Date` date DEFAULT NULL,
+  PRIMARY KEY (`Booking_id`),
+  KEY `Booking_Service_info_id` (`Booking_Service_info_id`),
+  KEY `Booking_Customer_id` (`Booking_Customer_id`),
+  KEY `Booking_service_id` (`Booking_service_id`),
+  CONSTRAINT `booking_info_tbl_ibfk_1` FOREIGN KEY (`Booking_Service_info_id`) REFERENCES `booking_service_info_tbl` (`Booking_Service_Id`),
+  CONSTRAINT `booking_info_tbl_ibfk_2` FOREIGN KEY (`Booking_Customer_id`) REFERENCES `customer_info_tbl` (`Customer_id`),
+  CONSTRAINT `booking_info_tbl_ibfk_3` FOREIGN KEY (`Booking_service_id`) REFERENCES `service_info_tbl` (`Service_Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=504 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `booking_info_tbl`
+--
+
+LOCK TABLES `booking_info_tbl` WRITE;
+/*!40000 ALTER TABLE `booking_info_tbl` DISABLE KEYS */;
+INSERT INTO `booking_info_tbl` VALUES (501,1,11,1001,500,'Completed','2022-02-20 01:50:11','2022-03-25 02:00:00',5,' Satisfy with the service','2022-02-26'),(502,1,11,1002,600,'Completed','2022-02-20 01:55:01','2022-03-25 02:00:00',4,'Good Service','2022-02-26'),(503,2,12,1001,500,'Inprogess','2022-02-25 02:55:01','2022-03-02 03:00:10',NULL,NULL,NULL);
+/*!40000 ALTER TABLE `booking_info_tbl` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `booking_service_info_tbl`
+--
+
+DROP TABLE IF EXISTS `booking_service_info_tbl`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `booking_service_info_tbl` (
+  `Booking_Service_Id` int NOT NULL AUTO_INCREMENT,
+  `Booking_total_Cost` int DEFAULT NULL,
+  `Service_Status` varchar(255) DEFAULT NULL,
+  `Booking_CustomerId` int DEFAULT NULL,
+  PRIMARY KEY (`Booking_Service_Id`),
+  KEY `CustomerId` (`Booking_CustomerId`),
+  CONSTRAINT `booking_service_info_tbl_ibfk_1` FOREIGN KEY (`Booking_CustomerId`) REFERENCES `customer_info_tbl` (`Customer_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `booking_service_info_tbl`
+--
+
+LOCK TABLES `booking_service_info_tbl` WRITE;
+/*!40000 ALTER TABLE `booking_service_info_tbl` DISABLE KEYS */;
+INSERT INTO `booking_service_info_tbl` VALUES (1,1100,'Completed',11),(2,500,'InProcess',12);
+/*!40000 ALTER TABLE `booking_service_info_tbl` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `customer_info_tbl`
+--
+
+DROP TABLE IF EXISTS `customer_info_tbl`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `customer_info_tbl` (
+  `Customer_id` int NOT NULL AUTO_INCREMENT,
+  `Customer_FirstName` varchar(255) DEFAULT NULL,
+  `Customer_LastName` varchar(255) DEFAULT NULL,
+  `Customer_MobileNo` varchar(255) DEFAULT NULL,
+  `Customer_EmailId` varchar(255) DEFAULT NULL,
+  `Customer_UserName` varchar(255) DEFAULT NULL,
+  `Customer_Password` varchar(255) DEFAULT NULL,
+  `Customer_Address` text,
+  `Customer_State` varchar(255) DEFAULT NULL,
+  `Customer_City` varchar(255) DEFAULT NULL,
+  `Customer_Pincode` int DEFAULT NULL,
+  PRIMARY KEY (`Customer_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `customer_info_tbl`
+--
+
+LOCK TABLES `customer_info_tbl` WRITE;
+/*!40000 ALTER TABLE `customer_info_tbl` DISABLE KEYS */;
+INSERT INTO `customer_info_tbl` VALUES (11,'Pooja','Kale','9988776655','Poojakale0911@gm1il.com','Pooja-Kale','Pooja@01','Near Post Office','Maharashtra','Pune',442277),(12,'Rutuja','Firke','8877665511','RutujaFirke1002@gmail.com','Rututja-Firke','Rutuja@02','Near Station','Maharashtra','Mumbai',402271),(13,'Prashant','Bohra','9881776655','PrashantBohra22@gm1il.com','Prashant-Bohra','Prashant@123','Behind HDFC Bank','Maharashtra','Nashik',402277),(14,'Nikhil','Sahane','8781776655','NikhilSahane33@gmail.com','Nikhil-Sahane','Nikhil@456','ABC Chock','Maharashtra','Pune',402217),(15,'Lucky','Kumar','9881116611','LuckyKumar@gmail.com','Lucky_Kumar','Lucky@123','Near Market','Maharashtra','Nashik',403271),(16,'Anurag','Deore','9881226611','AnuragDeore@gmail.com','Anurag-Deore','Anurag@123','Near church','Maharashtra','Pune',203271),(17,'Anurag','Deore','9881226611','AnuragDeore@gmail.com','Anurag-Deore','Anurag@123','Near church','Maharashtra','Pune',203271);
+/*!40000 ALTER TABLE `customer_info_tbl` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `feedback_info_tbl`
+--
+
+DROP TABLE IF EXISTS `feedback_info_tbl`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `feedback_info_tbl` (
+  `Feedback_Id` int NOT NULL AUTO_INCREMENT,
+  `Feedback_vendor_id` int DEFAULT NULL,
+  `Feedback_customer_id` int DEFAULT NULL,
+  PRIMARY KEY (`Feedback_Id`),
+  KEY `Feedback_vendor_id` (`Feedback_vendor_id`),
+  KEY `Feedback_customer_id` (`Feedback_customer_id`),
+  CONSTRAINT `feedback_info_tbl_ibfk_1` FOREIGN KEY (`Feedback_vendor_id`) REFERENCES `vendor_info_tbl` (`Vendor_id`),
+  CONSTRAINT `feedback_info_tbl_ibfk_2` FOREIGN KEY (`Feedback_customer_id`) REFERENCES `customer_info_tbl` (`Customer_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10005 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `feedback_info_tbl`
+--
+
+LOCK TABLES `feedback_info_tbl` WRITE;
+/*!40000 ALTER TABLE `feedback_info_tbl` DISABLE KEYS */;
+INSERT INTO `feedback_info_tbl` VALUES (10001,101,11),(10002,101,12),(10003,102,13),(10004,103,14);
+/*!40000 ALTER TABLE `feedback_info_tbl` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `image_tbl`
+--
+
+DROP TABLE IF EXISTS `image_tbl`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `image_tbl` (
+  `id` int NOT NULL,
+  `image` longblob,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `image_tbl`
+--
+
+LOCK TABLES `image_tbl` WRITE;
+/*!40000 ALTER TABLE `image_tbl` DISABLE KEYS */;
+INSERT INTO `image_tbl` VALUES (1,_binary 'ÿ\Øÿ\à\0JFIF\0\0\0\0\0\0ÿ\Û\0C\0		\n !%0)!#-$*9*-13666 (;?:4>0563ÿ\Û\0C			3\"\"33333333333333333333333333333333333333333333333333ÿÀ\0\0Š\0 \"\0ÿ\Ä\0\0\0\0\0\0\0\0\0\0\0\0\0\0ÿ\Ä\0:\0\0\0\0\0\0!1AQ\"aq‘¡#2±ÁB\Ñ\ð$34C‚\ñr’\áÿ\Ä\0\0\0\0\0\0\0\0\0\0\0\0\0\0ÿ\Ä\0\0\0\0\0\0\0\0\0\0\0!12\"ÿ\Ú\0\0\0?\0\íCM\ôOá²—\Ý4T­Sd\í’\'v\ÉE\îÊŸ\â\n\\0Jù\älL :Þ§e¿ˆVE‡PMW5\òF\Û\ØnO ¼Ÿ\ÄˆNg˜¹\Ó\Ëgxºr\öQ]H¿\Ä8Þ¦B>”6¼n½½IU•X¥uD\Îú—·\\\ò¿\Ã\ím3\Ø\×\é\êKÁšjƒj©OÜž\ñ­Üµ\÷µþ\ê66\ç\Ç\ë)c	\ä\ö¹²Ÿúû-¬?´\\BŠ@j\Ëk\"\Z88\0\ëy©>«—šŠ9^d\Ìs\ò‡¨\èdˆœŒk:[ŸÀ]t‹+\è;§\Å0\Ø+©\Ü\ã­»sn<Š\Øq^5\ÂKY\Õ6	\Þù¨\\lb&\á·\æ:s^»\rDuT\ìš\'fc†…Mr\ÊuJPºRz¨º\"Š\0¨”E”²‘j\á\áX\î³eX¬9(&\åjs@®\Z$\0„\îI—\ÏmQ.gj\Ó\Ñ\Ò5Àd$ß\×%l—†\"\\\çß¼”\\0r\0s\ë\îºLyŽ\ÄøŠH\r›>V\æ=7?ªÚ¤kbs#e¬9]QË•\Æ/\â\Ãt(8N˜–º¡\ï\Ü\óh>»¸¨ˆ[q\Ê\ÊÆ”me{M˜v‹,ž\õº\ã$ø\ó);1k^m!\ßK-*\Î\0Žš½\Å\ÃmW¯N|Ás¸“¼¸S\ï‘8\ñ¯m+ß˜Ü‡s<\õ]\Ï	Uf¡’•\Î\ñ\Ä\ï\Ë\Ë\ÙVc”Mpk\ò’\àVRc²C+³1\ñ\Ö\Ë_~Ñƒ—Z\îI@ 9¢U\ÑJ\"\n\0\"4*Pe:¡eÔ‹·uŽ\ÖM›D·@\óJ.\nbRJuP\rwP5My(¿>¸.\"’Jz\É\ê\Ùv	3ƒ\äl½\Ö\ÅÍŽž:ŠƒÝ´\Ø\ë\È+^0£\áMu\Í “A\È’°U`\Ä)\âfŽ ?ir6ºÇ–[·\ã…\Ç+c=/\áq8šø\ãþY|%tX_\áu\î,§«ŠG^\Ökµ^6\rŽ\Ë\"v#1ç‰‘·(\ZZÀ‹\ß•¿ARR\É\ßF\Æ5\Ìp\È\ì–yë°²\ç9Žºu\Ê×¢O4q\Ä\ç=\ö¾§`7ˆcX`ü\'T\Æv…\Ö>\'kê ¥£¶f\Ý\÷y\0m\îl¸j®\Z–\nÈ¦¦§¢ž7Û½lÑ—†\×\'C®Ÿ¢q\ã/\×YÛŒé±V\ÓU\ÅzY\Ã]ce0Y[‹F\è\ØmE\Ä\õ¸²«šZ\Ã8¥4\ìkŒr1¤–¸l:z+\Î§12Yu¶R\Û{«ø\õ:Œ¼»\Ênº€	\Zl˜\rfÔ¢´³2y \n<\Ô uM\Édt²\r\âR©š\È]P(Ó¢„\Ø›¤ü%.¸J]¢ƒƒ\ê0i„¸–n\Û„øL™\éc. —4y\Ý#©å‰¥­l µZ˜3‹i\Ø\Ûm¥¹¬\\œv=.Ik¢ú8\ä!\ä·^yVdº¥±F\ÐMù\ÓU<4D4U\Õr\Ö\Ä\Ô}Ûƒ<o\ÛÏ’ªcjý\É\Ù\ñ˜¿\ÄÒ¹\â\ìË“\Òÿ\0\ô³2\Ç^&žw\ZOˆ\âX†\'Sj\ê&‘Û‘\Ò\Ê\ö:\Ü\ð´\ì–Y,ª\\N8©p\é‹\Z—\0*\ì\r¥”¦<¶-n¾§UµŽ½Ò´\Å}\æ·Nz¬´\í\É\å\Ê\\s\Óû²¿ƒ½²yMj2‘rQh² Û­Œ,\ÍM\Í#Jk dn€¢T„j	Š]l»\ê–üŠ6HN¨#Š-·4·\ÕOu\0¸‚l«°\ç\÷5\ÓB\ã\âc\É\öä·¬}|—1UZ\ß\âO¯£™³G›+\Ë5\Ú[W7x¯\ñÿ\0N¦°\Ôd\"ÁŸR]{}–\ZWb\'¼¥†X\Ç\æ\É1\à‹)‡\Ö2¦‘Ù‚\ÛtE\Î-f–\Z\Ýdø\Ý*ººI\ÜúZÞ¦FU‹\ï$‘†2\Òt½\ô[²S·8ŽFƒ¥ú]Vb8 ¸\Ì\Â,yhŸK\ÒVe“‰¬\ÐF\ó\ëk\Ôü,\ãoº¦Á«[^Ê™‹Á\É\âh>&‹xAû«P\íw[x\ñ\Ö/?—/l}Q	Q¾Š\ÅG	ÁXÁ)‚Át(\ßTgU\ÑºX\Ý`u)Žš\òX*ja£…\Ó\Ô\Î\Èah\Õ\ïxhùM—\r\Ö\èf\×\Ùq8§iXE)s(Y-l»fgŸûO\Â\ãq.\Ðq\Ú\Ü\âã£ˆ‹e§gŠ\ßùT\ÌQ·]\Ú7¢“£”\Z\é›i^Ó¬L¶¿\ò;ykäŸƒ!lœ-L\ÖØœš\é\Îú¯\"{ ‘\î%\Ïp$’nI^¥\Ù\åP~	\Ýø^@þý\Õ^F6`»Æ¿\Õ\Ú\ö7Í‚\Ï$‘‚\ènZ7Š\Ò>(£i$8´;|À\Ýl>‘µt—h»€UƒŠGø…B9[l¦«\âº6¸¸?(°\0\ÊU\É6/W\ß\Èb¿…¤þª\ê|)\Ñ1·rÖ«§pk4\ne›E•ÀC\Ä`œe5[|\',SE{gmµ\÷\Óu\é\ØOax\Äa\ÔÕŒâ”†¼Cûh¼oˆÃŠ\Î\rÁ6q\÷Z„f\Z~\ëÑ“x¼ÜºÊ¾†\ÛC\í¢`GP¼\n“Å¨,\Ú\\Jªš\Ù	oÁ\Ó\ì¯){B\â*kg¨‚¤\rÄ°}\Ûd\õ=£Ø…·ºaº\óZ^\Ô\ækš+0˜\Ü?™\ÐHAøuÿ\0U}K\Ú7T\0%–zWR\Äm\ò.£Ö§q\Ø7E\0¹Z”8#z*¸j\0=Û®G¶\ëpn|”hm\É$p‚\éž\È\Û{]\î\r\år§i81Ó¾J\éÿ\0d\0ß“û]q]¦â­\âg\Ò\÷„\ÃHÀ\ÐÀ\âc©?q\ð¸\Â/c}ºþ.\æ.v\ïqÔ±)\î\Ú\ZX)[\ÉÎ¼Žû\é\ö\\^!‰V\â³\÷\Õ\ÕSO\'#+³[\Ðm\öZª)\Ò6š\õºWd\ÂÄ¢FŠPF	t]·f\ÕVªš‘Ç£Àû\ÙqcEe\ÃˆÂ±úy\Ü\ëF\×\Ùþ‡E_&;\Åg\ÖO 0\ÒY3¡-\ôb¢Ž9œCšt\Þ\Å%$%ïŠ¢t\Z\Þãª·c[\õ>!\áp\ß\Íyš\ÖÞ¬\îmQM…E\ðÝµ\ÕP\ÖP¶WKœ_¡]Ô®c€°²¦ª¥ik›–ú(C\çþ1\ñ\rDm;F\Í>\êŒU·\Z<IÆ¸‘6L\ö\0*€4^¶˜\ò³¿\ÕB€\"6Pnºq´·’¿2ˆm t”²‰ ‘\Ð\ÊÝŸ‹H\÷\Ô;:\â\nœF:¬6¶w\Ìø@–\'\Èn\ì¤Ø‚y\Ø\Û\åyq\"Ë¡\àj\ÑE\Å\ô]\ãÀŽ¢\ô\îÿ\0\Ó\î‹	U\Ø\Åa\Ä1J\Ê\Ãk\ÔL\ç\ÐrZm\Ùvæ•º)€\Ù&Q¾ˆ\ïª&\Ä%\Z +^RZ\÷›>\Ëc\É+›ø‡KŽa¯\ö]Æ¦©±\àUŽ¼Ñ°ý,§w4\ÈyiÈ¯N‘\Ísn\ãkt_=vyC%W\ZP:ž\àBL\Î#Ÿ\È_@ˆŸ–û\ò^w‘Œ™j=/Ü°\Ý7„·šÓ©•\í_~‹u\Ð9\Ä_BW-\Æ8˜Á\ð\nªœßŠ\æ\÷pù¼\è?ª§m².\ÎÉxV,\ñQŒW\Ê\\\ï©y¿_þ‹Q(‹4¹‰<\É=OT\ËÖ“­<{\Ý\Ø:\Þ\È7]Q\"\ê\r P;\"•\æ\Â\è›§Žg\Ó\Ï\ñŸÄ‰\á\í\õ\ã\ôXÛ©Dú \Øx\Õ*b‘\È6@¨6E\õAh Šg\r^\Öq±Qc“vz \ô\Î8·\n\áêšŠ|BŸ»}Kÿ\0Õ˜4\rƒ›\Ó^K\Üéª©\ë\è\ÙQM+eŠ@\Ù\Z\à\à\á\ê\É\í$<küÁ{c\Ò\È\êjH\ãv°ŸOY9\ðŸ¦\ÎK­=M\î±!\Û[U\à} q/\ñ\ìu\ñÀû\ÐÑ¸\Ç9Àø\ó§ ^ÙŒ8³\r«-%¤D\ò\Ò\Þ¾dÿ\0iž‡\õ+Ÿ\ZK\Ýu\ä\åd\Ó\ïu¬3­\Óûý’œ\Ò?Y\ÞO—îŸ’\ÚÂˆ‘J\í½\Ñ\Íc”œ¥d\æ±K±@|7N4Œÿ\0-d(?ÿ\Ù');
+/*!40000 ALTER TABLE `image_tbl` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `service_info_tbl`
+--
+
+DROP TABLE IF EXISTS `service_info_tbl`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `service_info_tbl` (
+  `Service_Id` int NOT NULL AUTO_INCREMENT,
+  `Service_Name` varchar(255) DEFAULT NULL,
+  `Service_Cost` int DEFAULT NULL,
+  `Service_Discount` int DEFAULT NULL,
+  `Service_Time_Duration` int DEFAULT NULL,
+  `Service_vendor_id` int DEFAULT NULL,
+  `Service_Image` longblob,
+  PRIMARY KEY (`Service_Id`),
+  KEY `Service_vendor_id` (`Service_vendor_id`),
+  CONSTRAINT `service_info_tbl_ibfk_1` FOREIGN KEY (`Service_vendor_id`) REFERENCES `vendor_info_tbl` (`Vendor_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1008 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `service_info_tbl`
+--
+
+LOCK TABLES `service_info_tbl` WRITE;
+/*!40000 ALTER TABLE `service_info_tbl` DISABLE KEYS */;
+INSERT INTO `service_info_tbl` VALUES (1001,'AC Repairing',500,2,1,101,NULL),(1002,'Fan Repairing',600,3,1,101,NULL),(1003,'AC Repairing',400,2,1,102,NULL),(1004,'Fan Repairing',700,2,1,102,NULL),(1005,'Refrigerator Repairing',900,2,1,103,NULL),(1006,'Refrigerator Repairing',600,2,2,101,NULL),(1007,'Washing Machine',800,3,1,104,NULL);
+/*!40000 ALTER TABLE `service_info_tbl` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `vendor_info_tbl`
+--
+
+DROP TABLE IF EXISTS `vendor_info_tbl`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `vendor_info_tbl` (
+  `Vendor_id` int NOT NULL AUTO_INCREMENT,
+  `Vendor_FirstName` varchar(255) DEFAULT NULL,
+  `Vendor_LastName` varchar(255) DEFAULT NULL,
+  `Vendor_MobileNo` varchar(255) DEFAULT NULL,
+  `Vendor_EmailId` varchar(255) DEFAULT NULL,
+  `Vendor_UserName` varchar(255) DEFAULT NULL,
+  `Vendor_Password` varchar(255) DEFAULT NULL,
+  `Vendor_Address` text,
+  `Vendor_State` varchar(255) DEFAULT NULL,
+  `Vendor_City` varchar(255) DEFAULT NULL,
+  `Vendor_Pincode` int DEFAULT NULL,
+  `Vendor_Image` longblob,
+  PRIMARY KEY (`Vendor_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=108 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `vendor_info_tbl`
+--
+
+LOCK TABLES `vendor_info_tbl` WRITE;
+/*!40000 ALTER TABLE `vendor_info_tbl` DISABLE KEYS */;
+INSERT INTO `vendor_info_tbl` VALUES (101,'Aditya','Birla','8181116611','AdityaBirla@gmail.com','AdityaBirla','Aditya@123','Market Yard','Maharashtra','Pune',203171,_binary 'ÿ\Øÿ\à\0JFIF\0\0\0\0\0\0ÿ\Û\0C\0		\n !%0)!#-$*9*-13666 (;?:4>0563ÿ\Û\0C			3\"\"33333333333333333333333333333333333333333333333333ÿÀ\0\0Š\0 \"\0ÿ\Ä\0\0\0\0\0\0\0\0\0\0\0\0\0\0ÿ\Ä\0:\0\0\0\0\0\0!1AQ\"aq‘¡#2±ÁB\Ñ\ð$34C‚\ñr’\áÿ\Ä\0\0\0\0\0\0\0\0\0\0\0\0\0\0ÿ\Ä\0\0\0\0\0\0\0\0\0\0\0!12\"ÿ\Ú\0\0\0?\0\íCM\ôOá²—\Ý4T­Sd\í’\'v\ÉE\îÊŸ\â\n\\0Jù\älL :Þ§e¿ˆVE‡PMW5\òF\Û\ØnO ¼Ÿ\ÄˆNg˜¹\Ó\Ëgxºr\öQ]H¿\Ä8Þ¦B>”6¼n½½IU•X¥uD\Îú—·\\\ò¿\Ã\ím3\Ø\×\é\êKÁšjƒj©OÜž\ñ­Üµ\÷µþ\ê66\ç\Ç\ë)c	\ä\ö¹²Ÿúû-¬?´\\BŠ@j\Ëk\"\Z88\0\ëy©>«—šŠ9^d\Ìs\ò‡¨\èdˆœŒk:[ŸÀ]t‹+\è;§\Å0\Ø+©\Ü\ã­»sn<Š\Øq^5\ÂKY\Õ6	\Þù¨\\lb&\á·\æ:s^»\rDuT\ìš\'fc†…Mr\ÊuJPºRz¨º\"Š\0¨”E”²‘j\á\áX\î³eX¬9(&\åjs@®\Z$\0„\îI—\ÏmQ.gj\Ó\Ñ\Ò5Àd$ß\×%l—†\"\\\çß¼”\\0r\0s\ë\îºLyŽ\ÄøŠH\r›>V\æ=7?ªÚ¤kbs#e¬9]QË•\Æ/\â\Ãt(8N˜–º¡\ï\Ü\óh>»¸¨ˆ[q\Ê\ÊÆ”me{M˜v‹,ž\õº\ã$ø\ó);1k^m!\ßK-*\Î\0Žš½\Å\ÃmW¯N|Ás¸“¼¸S\ï‘8\ñ¯m+ß˜Ü‡s<\õ]\Ï	Uf¡’•\Î\ñ\Ä\ï\Ë\Ë\ÙVc”Mpk\ò’\àVRc²C+³1\ñ\Ö\Ë_~Ñƒ—Z\îI@ 9¢U\ÑJ\"\n\0\"4*Pe:¡eÔ‹·uŽ\ÖM›D·@\óJ.\nbRJuP\rwP5My(¿>¸.\"’Jz\É\ê\Ùv	3ƒ\äl½\Ö\ÅÍŽž:ŠƒÝ´\Ø\ë\È+^0£\áMu\Í “A\È’°U`\Ä)\âfŽ ?ir6ºÇ–[·\ã…\Ç+c=/\áq8šø\ãþY|%tX_\áu\î,§«ŠG^\Ökµ^6\rŽ\Ë\"v#1ç‰‘·(\ZZÀ‹\ß•¿ARR\É\ßF\Æ5\Ìp\È\ì–yë°²\ç9Žºu\Ê×¢O4q\Ä\ç=\ö¾§`7ˆcX`ü\'T\Æv…\Ö>\'kê ¥£¶f\Ý\÷y\0m\îl¸j®\Z–\nÈ¦¦§¢ž7Û½lÑ—†\×\'C®Ÿ¢q\ã/\×YÛŒé±V\ÓU\ÅzY\Ã]ce0Y[‹F\è\ØmE\Ä\õ¸²«šZ\Ã8¥4\ìkŒr1¤–¸l:z+\Î§12Yu¶R\Û{«ø\õ:Œ¼»\Ênº€	\Zl˜\rfÔ¢´³2y \n<\Ô uM\Édt²\r\âR©š\È]P(Ó¢„\Ø›¤ü%.¸J]¢ƒƒ\ê0i„¸–n\Û„øL™\éc. —4y\Ý#©å‰¥­l µZ˜3‹i\Ø\Ûm¥¹¬\\œv=.Ik¢ú8\ä!\ä·^yVdº¥±F\ÐMù\ÓU<4D4U\Õr\Ö\Ä\Ô}Ûƒ<o\ÛÏ’ªcjý\É\Ù\ñ˜¿\ÄÒ¹\â\ìË“\Òÿ\0\ô³2\Ç^&žw\ZOˆ\âX†\'Sj\ê&‘Û‘\Ò\Ê\ö:\Ü\ð´\ì–Y,ª\\N8©p\é‹\Z—\0*\ì\r¥”¦<¶-n¾§UµŽ½Ò´\Å}\æ·Nz¬´\í\É\å\Ê\\s\Óû²¿ƒ½²yMj2‘rQh² Û­Œ,\ÍM\Í#Jk dn€¢T„j	Š]l»\ê–üŠ6HN¨#Š-·4·\ÕOu\0¸‚l«°\ç\÷5\ÓB\ã\âc\É\öä·¬}|—1UZ\ß\âO¯£™³G›+\Ë5\Ú[W7x¯\ñÿ\0N¦°\Ôd\"ÁŸR]{}–\ZWb\'¼¥†X\Ç\æ\É1\à‹)‡\Ö2¦‘Ù‚\ÛtE\Î-f–\Z\Ýdø\Ý*ººI\ÜúZÞ¦FU‹\ï$‘†2\Òt½\ô[²S·8ŽFƒ¥ú]Vb8 ¸\Ì\Â,yhŸK\ÒVe“‰¬\ÐF\ó\ëk\Ôü,\ãoº¦Á«[^Ê™‹Á\É\âh>&‹xAû«P\íw[x\ñ\Ö/?—/l}Q	Q¾Š\ÅG	ÁXÁ)‚Át(\ßTgU\ÑºX\Ý`u)Žš\òX*ja£…\Ó\Ô\Î\Èah\Õ\ïxhùM—\r\Ö\èf\×\Ùq8§iXE)s(Y-l»fgŸûO\Â\ãq.\Ðq\Ú\Ü\âã£ˆ‹e§gŠ\ßùT\ÌQ·]\Ú7¢“£”\Z\é›i^Ó¬L¶¿\ò;ykäŸƒ!lœ-L\ÖØœš\é\Îú¯\"{ ‘\î%\Ïp$’nI^¥\Ù\åP~	\Ýø^@þý\Õ^F6`»Æ¿\Õ\Ú\ö7Í‚\Ï$‘‚\ènZ7Š\Ò>(£i$8´;|À\Ýl>‘µt—h»€UƒŠGø…B9[l¦«\âº6¸¸?(°\0\ÊU\É6/W\ß\Èb¿…¤þª\ê|)\Ñ1·rÖ«§pk4\ne›E•ÀC\Ä`œe5[|\',SE{gmµ\÷\Óu\é\ØOax\Äa\ÔÕŒâ”†¼Cûh¼oˆÃŠ\Î\rÁ6q\÷Z„f\Z~\ëÑ“x¼ÜºÊ¾†\ÛC\í¢`GP¼\n“Å¨,\Ú\\Jªš\Ù	oÁ\Ó\ì¯){B\â*kg¨‚¤\rÄ°}\Ûd\õ=£Ø…·ºaº\óZ^\Ô\ækš+0˜\Ü?™\ÐHAøuÿ\0U}K\Ú7T\0%–zWR\Äm\ò.£Ö§q\Ø7E\0¹Z”8#z*¸j\0=Û®G¶\ëpn|”hm\É$p‚\éž\È\Û{]\î\r\år§i81Ó¾J\éÿ\0d\0ß“û]q]¦â­\âg\Ò\÷„\ÃHÀ\ÐÀ\âc©?q\ð¸\Â/c}ºþ.\æ.v\ïqÔ±)\î\Ú\ZX)[\ÉÎ¼Žû\é\ö\\^!‰V\â³\÷\Õ\ÕSO\'#+³[\Ðm\öZª)\Ò6š\õºWd\ÂÄ¢FŠPF	t]·f\ÕVªš‘Ç£Àû\ÙqcEe\ÃˆÂ±úy\Ü\ëF\×\Ùþ‡E_&;\Åg\ÖO 0\ÒY3¡-\ôb¢Ž9œCšt\Þ\Å%$%ïŠ¢t\Z\Þãª·c[\õ>!\áp\ß\Íyš\ÖÞ¬\îmQM…E\ðÝµ\ÕP\ÖP¶WKœ_¡]Ô®c€°²¦ª¥ik›–ú(C\çþ1\ñ\rDm;F\Í>\êŒU·\Z<IÆ¸‘6L\ö\0*€4^¶˜\ò³¿\ÕB€\"6Pnºq´·’¿2ˆm t”²‰ ‘\Ð\ÊÝŸ‹H\÷\Ô;:\â\nœF:¬6¶w\Ìø@–\'\Èn\ì¤Ø‚y\Ø\Û\åyq\"Ë¡\àj\ÑE\Å\ô]\ãÀŽ¢\ô\îÿ\0\Ó\î‹	U\Ø\Åa\Ä1J\Ê\Ãk\ÔL\ç\ÐrZm\Ùvæ•º)€\Ù&Q¾ˆ\ïª&\Ä%\Z +^RZ\÷›>\Ëc\É+›ø‡KŽa¯\ö]Æ¦©±\àUŽ¼Ñ°ý,§w4\ÈyiÈ¯N‘\Ísn\ãkt_=vyC%W\ZP:ž\àBL\Î#Ÿ\È_@ˆŸ–û\ò^w‘Œ™j=/Ü°\Ý7„·šÓ©•\í_~‹u\Ð9\Ä_BW-\Æ8˜Á\ð\nªœßŠ\æ\÷pù¼\è?ª§m².\ÎÉxV,\ñQŒW\Ê\\\ï©y¿_þ‹Q(‹4¹‰<\É=OT\ËÖ“­<{\Ý\Ø:\Þ\È7]Q\"\ê\r P;\"•\æ\Â\è›§Žg\Ó\Ï\ñŸÄ‰\á\í\õ\ã\ôXÛ©Dú \Øx\Õ*b‘\È6@¨6E\õAh Šg\r^\Öq±Qc“vz \ô\Î8·\n\áêšŠ|BŸ»}Kÿ\0Õ˜4\rƒ›\Ó^K\Üéª©\ë\è\ÙQM+eŠ@\Ù\Z\à\à\á\ê\É\í$<küÁ{c\Ò\È\êjH\ãv°ŸOY9\ðŸ¦\ÎK­=M\î±!\Û[U\à} q/\ñ\ìu\ñÀû\ÐÑ¸\Ç9Àø\ó§ ^ÙŒ8³\r«-%¤D\ò\Ò\Þ¾dÿ\0iž‡\õ+Ÿ\ZK\Ýu\ä\åd\Ó\ïu¬3­\Óûý’œ\Ò?Y\ÞO—îŸ’\ÚÂˆ‘J\í½\Ñ\Íc”œ¥d\æ±K±@|7N4Œÿ\0-d(?ÿ\Ù'),(102,'Advik','Jadhav','8811166711','AdvikJadhav@gmail.com','Advik-Jadhav','Advik@123','Behind Post Office','Maharashtra','Pune',403171,NULL),(103,'Yash','Kumar','8811008811','YashKumar101@gmail.com','Yash-Kumar','Yash@123','Shivajichoak','Maharashtra','Nashik',203133,NULL),(104,'Niraj','Desai','9811008800','NirajDesai01@gmail.com','Niraj-Desai','Niraj@123','Near SP College','Maharashtra','Pune',403113,NULL),(105,'Sanjay','Raut','8899116611','SanjayRaut99@gmail.com','Sanjay-Raut','Sanjay@123','near kalyan','Maharashtra','Mumbai',207671,NULL);
+/*!40000 ALTER TABLE `vendor_info_tbl` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2022-03-01 21:28:16
