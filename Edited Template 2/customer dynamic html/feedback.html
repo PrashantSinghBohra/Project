@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Customer.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <!-- style css -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Responsive-->
+  <link rel="stylesheet" href="css/responsive.css">
+  <!-- fevicon -->
+  <link rel="icon" href="images/fevicon.png" type="image/gif" />
+  <!-- Scrollbar Custom CSS -->
+  <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+  <!-- Tweaks for older IEs-->
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
+    media="screen">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+
+
+.container1 {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact input[type="tel"],
+#contact input[type="url"],
+#contact textarea,
+#contact button[type="submit"] {
+  font: 400 12px/16px "Roboto", Helvetica, Arial, sans-serif;
+}
+
+#contact {
+  background: #F9F9F9;
+  padding: 25px;
+  margin: 100px 0;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+#contact h3 {
+  display: block;
+  font-size: 30px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+#contact h4 {
+  margin: 5px 0 15px;
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+fieldset {
+  border: medium none !important;
+  margin: 0 0 10px;
+  min-width: 100%;
+  padding: 0;
+  width: 100%;
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact input[type="tel"],
+#contact input[type="url"],
+#contact textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  background: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+}
+
+#contact input[type="text"]:hover,
+#contact input[type="email"]:hover,
+#contact input[type="tel"]:hover,
+#contact input[type="url"]:hover,
+#contact textarea:hover {
+  -webkit-transition: border-color 0.3s ease-in-out;
+  -moz-transition: border-color 0.3s ease-in-out;
+  transition: border-color 0.3s ease-in-out;
+  border: 1px solid #aaa;
+}
+
+#contact textarea {
+  height: 100px;
+  max-width: 100%;
+  resize: none;
+}
+
+#contact button[type="submit"] {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  background: #4835d4;;
+  color: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+  font-size: 15px;
+}
+
+#contact button[type="submit"]:hover {
+  background: #43A047;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#contact button[type="submit"]:active {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.copyright {
+  text-align: center;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+  outline: 0;
+  border: 1px solid #aaa;
+}
+
+::-webkit-input-placeholder {
+  color: #888;
+}
+
+:-moz-placeholder {
+  color: #888;
+}
+
+::-moz-placeholder {
+  color: #888;
+}
+
+:-ms-input-placeholder {
+  color: #888;
+}
+
+
+
+
+
+form p,
+form input[type="submit"] {
+  text-align: center;
+  font-size: 20px;
+}
+
+#wrapper form input[type="submit"] {
+  border: 1px solid #d9d9d9;
+  background-color: #efefef;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+label {
+  color: grey;
+}
+
+.clasificacion {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
+label:hover,
+label:hover ~ label {
+  color: orange;
+}
+
+input[type="radio"]:checked ~ label {
+  color: orange;
+}
+    </style>
+</head>
+<body>
+    
+    <div class="header">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xl-2 col-lg-3 col-md-3 col-sm-3 col logo_section">
+              <div class="full">
+                <div class="center-desk">
+                  <div class="logo">
+                    <a href="index.html"><img src="images/logo2.svg" alt="#" /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+              <div class="menu-area">
+                <div class="limit-box">
+                  <nav class="main-menu">
+                    <ul class="menu-area-main">
+                      <li > <a href="index.html">Home</a> </li>
+                      <li> <a href="#service">Service</a> </li>
+                      <li> <a href="signupCustomer.html">Sign Up</a> </li>
+                      <li> <a href="LoginVendor.html">Login</a> </li>
+                      <li> <a href="#review">About Us</a> </li>
+                      <li> <a href="#request">Contact Us</a> </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-lg-3 my-lg-0 my-md-1">
+            <div id="sidebar" class="bg-purple">
+                <div class="h4 text-white">Account</div>
+                <ul>
+                  <li> <a href="searchview.html" class="text-decoration-none d-flex align-items-start">
+                    <div class="far fa-address-book pt-2 me-3"></div>
+                    <div class="d-flex flex-column">
+                        <div class="link">Address Book</div>
+                        <div class="link-desc">View & Manage Addresses</div>
+                    </div>
+                </a> </li>
+                    <li class="active"> <a href="Customer.html" class="text-decoration-none d-flex align-items-start">
+                            <div class="fas fa-box pt-2 me-3"></div>
+                            <div class="d-flex flex-column">
+                                <div class="link">My Account</div>
+                                <div class="link-desc">View & Manage orders and returns</div>
+                            </div>
+                        </a> </li>
+                    <li> <a href="Myorder.html" class="text-decoration-none d-flex align-items-start">
+                            <div class="fas fa-box-open pt-2 me-3"></div>
+                            <div class="d-flex flex-column">
+                                <div class="link">My Orders</div>
+                                <div class="link-desc">View & Manage orders and returns</div>
+                            </div>
+                        </a> </li>
+                   
+                    <li> <a href="ediprofile.html" class="text-decoration-none d-flex align-items-start">
+                            <div class="far fa-user pt-2 me-3"></div>
+                            <div class="d-flex flex-column">
+                                <div class="link">My Profile</div>
+                                <div class="link-desc">Change your profile details & password</div>
+                            </div>
+                        </a> </li>
+                    <li> <a href="cart.html" class="text-decoration-none d-flex align-items-start">
+                            <div class="fas fa-headset pt-2 me-3"></div>
+                            <div class="d-flex flex-column">
+                                <div class="link">Cart list</div>
+                                <div class="link-desc">Contact Us for help and support</div>
+                            </div>
+                        </a> </li>
+
+                        <li> <a href="#" class="text-decoration-none d-flex align-items-start">
+                            <div class="fas fa-headset pt-2 me-3"></div>
+                            <div class="d-flex flex-column">
+                                <div class="link">feeedback & review</div>
+                                <div class="link-desc">share your experiance</div>
+                            </div>
+                        </a> </li>
+
+                        <li> <a href="#" class="text-decoration-none d-flex align-items-start">
+                            <div class="fas fa-headset pt-2 me-3"></div>
+                            <div class="d-flex flex-column">
+                                <div class="link">Logout</div>
+                                <div class="link-desc"></div>
+                            </div>
+                        </a> </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-9 my-lg-0 my-1">
+            <div id="main-content" class="bg-white border">
+                
+<div class="container1">  
+  <form id="contact" action="" method="post">
+    <h3>HappyToHelp Feedback Form</h3>
+    <h4></h4>
+    <fieldset>
+      <input placeholder="Your name" type="text" tabindex="1" required autofocus>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Your Email Address" type="email" tabindex="2" required>
+    </fieldset>
+    
+    <fieldset>
+      <input placeholder="Your Web Site (optional)" type="url" >
+    </fieldset>
+    <fieldset>
+      <textarea placeholder="Type your message here...." tabindex="5" required></textarea>
+    </fieldset>
+    <p class="clasificacion">
+      <input id="radio1" type="radio" name="estrellas" value="5"><!--
+     --><label for="radio1">&#9733;</label><!--
+     --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+     --><label for="radio2">&#9733;</label><!--
+     --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+     --><label for="radio3">&#9733;</label><!--
+     --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+     --><label for="radio4">&#9733;</label><!--
+     --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+     --><label for="radio5">&#9733;</label>
+   </p>
+    <fieldset>
+      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+    </fieldset>
+    
+    <p class="copyright"><a href="" target="_blank" title="Colorlib"></a></p>
+  </form>
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
